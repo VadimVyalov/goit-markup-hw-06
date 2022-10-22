@@ -228,9 +228,8 @@
                                 м. Київ, пр-т Лесі Українки, 26
                             </a>
                         </li>
-                        <li class="item">
-                            <a class="link-cont" href="mailto:info@devstudio" title="надіслати листа">
-                                info@devstudio
+                        <li class="item"><a class="link-cont" href="mailto:info@devstudio.com" title="надіслати листа">
+                                info@devstudio.com
                             </a>
                         </li>
                         <li class="item">
@@ -278,8 +277,34 @@
                     </li>
                 </ul>
             </div>
+            <div class="subscription">
+                <form name="send-mail" autocomplete="off" novalidate class="footer-js subscription-form">
+                    <!-- <h2 class="title">Підпишіться на розсилку</h2> -->
+                    <label class="send-label">
+                        <span class="title">Підпишіться на розсилку</span>
+                        <input type="email" name="user-mail" placeholder="E-mail" required class="footer-input">
+                    </label>
+                    <button type="submit" class="btn">Підписатися
+                        <svg class="btn-icon" width="24" height="24">
+                            <use href="./images/icons.svg#icon-paper-plane"></use>
+                        </svg>
+                    </button>
+                </form>
+            </div>
         </div>
     </footer>
+    <script>
+        (() => {
+            document.querySelector('.footer-js').addEventListener('submit', e => {
+                e.preventDefault();
+                new FormData(e.currentTarget).forEach((value, name) =>
+                    console.log(`${name}: ${value}`),
+                );
+
+                e.currentTarget.reset();
+            });
+        })();
+    </script>
 </body>
 
 </html>

@@ -392,7 +392,7 @@
                                 м. Київ, пр-т Лесі Українки, 26
                             </a>
                         </li>
-                        <li class="item"><a class="link-cont" href="mailto:info@devstudio" title="надіслати листа">
+                        <li class="item"><a class="link-cont" href="mailto:info@devstudio.com" title="надіслати листа">
                                 info@devstudio.com
                             </a>
                         </li>
@@ -442,10 +442,10 @@
                 </ul>
             </div>
             <div class="subscription">
-                <form name="send-mail" autocomplete="off" novalidate class="js-speaker-form subscription-form">
-                    <h2 class="title">Підпишіться на розсилку</h2>
+                <form name="send-mail" autocomplete="off" novalidate class="footer-js subscription-form">
+                    <!-- <h2 class="title">Підпишіться на розсилку</h2> -->
                     <label class="send-label">
-                        <span class="title-hide">Підпишіться на розсилку</span>
+                        <span class="title">Підпишіться на розсилку</span>
                         <input type="email" name="user-mail" placeholder="E-mail" required class="footer-input">
                     </label>
                     <button type="submit" class="btn">Підписатися
@@ -468,7 +468,7 @@
                 </svg>
             </button>
 
-            <form class="js-speaker-form" name="signup_form" autocomplete="off" novalidate>
+            <form class="modal-js" name="signup_form" autocomplete="off" novalidate>
                 <h2 class="modal-title">
                     Залиште свої дані, ми вам передзвонимо
                 </h2>
@@ -517,7 +517,28 @@
         </div>
     </div>
 
-    <script src="./js/modal.js">  </script>
+    <script src="./js/modal.js"> </script>
+
+    <script>
+        (() => {
+            document.querySelector('.footer-js').addEventListener('submit', e => {
+                e.preventDefault();
+                new FormData(e.currentTarget).forEach((value, name) =>
+                    console.log(`${name}: ${value}`),
+                );
+                e.currentTarget.reset();
+            });
+            document.querySelector('.modal-js').addEventListener('submit', e => {
+                e.preventDefault();
+                new FormData(e.currentTarget).forEach((value, name) =>
+                    console.log(`${name}: ${value}`),
+                );
+
+                e.currentTarget.reset();
+            });
+
+        })();
+    </script>
 
 
 </body>

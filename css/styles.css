@@ -682,7 +682,6 @@ padding-top: 12px;
 .footer-input:hover,
 .footer-input:focus {
     border-color: var(--decoration-color);
-    cursor: pointer;
 }
 
 .subscription .btn {
@@ -861,7 +860,6 @@ padding-top: 12px;
 .modal-input:focus {
     border-color:var(--decoration-color);
     outline: none;
-    cursor: pointer;
 }
 
 .modal-input:focus + .input-icon,
@@ -885,7 +883,6 @@ padding-top: 12px;
     display: block;
     text-align: center;
     line-height: 1.71;
-    cursor: pointer;
 }
 
 .custom-check {
@@ -907,6 +904,7 @@ padding-top: 12px;
 
 .check-focus {
     position: relative;
+    cursor: pointer;
 }
 
 .check-focus::before {
